@@ -8,15 +8,21 @@
     </a>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/search']">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
+                  
+      <div class="btn-group">
+          <button type="button" class="btn btn-secondary">Tipo de medio</button>
+          <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" [routerLink]="['/music']"> Musica</a>
+            <a class="dropdown-item" [routerLink]="['/audiobooks']"> Audiolibros</a>
+            <a class="dropdown-item" [routerLink]="['/books']"> Libros</a>
+            <a class="dropdown-item" [routerLink]="['/films']"> Peliculas</a>
+            <a class="dropdown-item" [routerLink]="['/podcast']"> Podcast</a>  
+          </div>
+      </div>
+
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Search">
