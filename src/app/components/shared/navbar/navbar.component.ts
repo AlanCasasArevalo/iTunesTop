@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ItunesService } from './../../../services/itunes.service';
 
 @Component({
   selector: 'myNavbar',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  objectToSearch:string = ""
+
+  constructor( private _itunesService: ItunesService ) { }
 
   ngOnInit() {
+  }
+  
+  toGetObjectToSearch(){
+    if(this.objectToSearch !== ""){
+      this._itunesService.getObjectsFound(this.objectToSearch.toLowerCase())
+                        .subscribe()
+    }
+
   }
 
 }

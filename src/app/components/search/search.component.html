@@ -1,3 +1,11 @@
-<p>
-  search works!
-</p>
+
+<div class="col-md-9">
+  <div class="row">
+    <div class="col-md-3 text-center" *ngFor="let found of _itunesService.founds">
+        <p>
+          {{ found.artistName }}
+        </p>
+        <img [src]="found.artworkUrl30" class="img-fluid">
+    </div>
+  </div>
+</div>
